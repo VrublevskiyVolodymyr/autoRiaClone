@@ -1,0 +1,3534 @@
+{
+	"info": {
+		"_postman_id": "27eb3051-1944-4c25-a53f-dc6fd144afb1",
+		"name": "autoRiaClone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28653130"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "sign-up-owner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"pm.environment.set(\"userId\", res.user.id);\r",
+									"pm.environment.set(\"accessToken\", res.tokens.accessToken);\r",
+									"pm.environment.set(\"refreshToken\", res.tokens.refreshToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"owner@gmail.com\",\r\n  \"password\": \"Owner123@\",\r\n  \"firstName\": \"Volodymyr\",\r\n  \"lastName\": \"Volodymyrovych\",\r\n  \"phone\": \"54345345342134523\",\r\n  \"deviceId\": \"9879879797686\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/sign-up-owner",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"sign-up-owner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign-up-partner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"pm.environment.set(\"userId\", res.user.id);\r",
+									"pm.environment.set(\"accessToken\", res.tokens.accessToken);\r",
+									"pm.environment.set(\"refreshToken\", res.tokens.refreshToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"partner@gmail.com\",\r\n  \"password\": \"Partner123@\",\r\n  \"firstName\": \"Lidiya\",\r\n  \"lastName\": \"Phedorivna\",\r\n  \"phone\": \"546456456456456\",\r\n  \"deviceId\": \"56756756756756\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baceURL}}/auth/sign-up-partner",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"auth",
+								"sign-up-partner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign-up-manager",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"pm.environment.set(\"userId\", res.user.id);\r",
+									"pm.environment.set(\"accessToken\", res.tokens.accessToken);\r",
+									"pm.environment.set(\"refreshToken\", res.tokens.refreshToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"v637904@gmail.com\",\r\n  \"password\": \"Manager12345@\",\r\n  \"firstName\": \"Volodymyr\",\r\n  \"lastName\": \"Yosypovych\",\r\n  \"phone\": \"32323342134523\",\r\n  \"deviceId\": \"98232323797686\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/sign-up-manager",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"sign-up-manager"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign-up-seller",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"pm.environment.set(\"userId\", res.user.id);\r",
+									"pm.environment.set(\"accessToken\", res.tokens.accessToken);\r",
+									"pm.environment.set(\"refreshToken\", res.tokens.refreshToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"seller@gmail.com\",\r\n  \"password\": \"Seller123@\",\r\n  \"firstName\": \"Sergiy\",\r\n  \"lastName\": \"Sergiyovych\",\r\n  \"phone\": \"3asdsdedf134523\",\r\n  \"deviceId\": \"982345534535797686\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/sign-up-seller",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"sign-up-seller"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign-up-mechanic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"pm.environment.set(\"userId\", res.user.id);\r",
+									"pm.environment.set(\"accessToken\", res.tokens.accessToken);\r",
+									"pm.environment.set(\"refreshToken\", res.tokens.refreshToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"mechanic@gmail.com\",\r\n  \"password\": \"Mechanic123@\",\r\n  \"firstName\": \"Misha\",\r\n  \"lastName\": \"Mychaylovych\",\r\n  \"phone\": \"3a456464523\",\r\n  \"deviceId\": \"95464565797686\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/sign-up-mechanic",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"sign-up-mechanic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign-up-buyer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"pm.environment.set(\"userId\", res.user.id);\r",
+									"pm.environment.set(\"accessToken\", res.tokens.accessToken);\r",
+									"pm.environment.set(\"refreshToken\", res.tokens.refreshToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"buyer@gmail.com\",\r\n  \"password\": \"Buyer123@\",\r\n  \"firstName\": \"Oryst\",\r\n  \"lastName\": \"Orystovych\",\r\n  \"deviceId\":\"567567567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baceURL}}/auth/sign-up-buyer",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"auth",
+								"sign-up-buyer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign-out",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhYzNhNDRjZS1jNDMxLTRhZDEtYmNiMy1jN2Y1NWQxMDMzMDYiLCJkZXZpY2VJZCI6Ijk4MjMyMzIzNzk3Njg2IiwiaWF0IjoxNzI5OTc0MjUxLCJleHAiOjE3MzAwMTAyNTF9.xFRyay4PWnejMyzwbWeVxlI4oivSW93pSwj4CxKhkGM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baceURL}}/auth/verify",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"auth",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhYzNhNDRjZS1jNDMxLTRhZDEtYmNiMy1jN2Y1NWQxMDMzMDYiLCJkZXZpY2VJZCI6Ijk4MjMyMzIzNzk3Njg2IiwiaWF0IjoxNzI5OTc0MjUxLCJleHAiOjE3MzAwMTAyNTF9.xFRyay4PWnejMyzwbWeVxlI4oivSW93pSwj4CxKhkGM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baceURL}}/auth/verify",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"auth",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign-in-owner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"pm.environment.set(\"userId\", res.user.id);\r",
+									"pm.environment.set(\"accessToken\", res.tokens.accessToken);\r",
+									"pm.environment.set(\"refreshToken\", res.tokens.refreshToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"owner@gmail.com\",\r\n  \"password\": \"Owner123@\",\r\n  \"deviceId\": \"9879879797686\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baceURL}}/auth/sign-in",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign-in manager",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"pm.environment.set(\"userId\", res.user.id);\r",
+									"pm.environment.set(\"accessToken\", res.tokens.accessToken);\r",
+									"pm.environment.set(\"refreshToken\", res.tokens.refreshToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"v637904@gmail.com\",\r\n  \"password\": \"Manager12345@\",\r\n  \"deviceId\": \"98232323797686\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/sign-in",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign-in mechanic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"pm.environment.set(\"userId\", res.user.id);\r",
+									"pm.environment.set(\"accessToken\", res.tokens.accessToken);\r",
+									"pm.environment.set(\"refreshToken\", res.tokens.refreshToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"mechanic@gmail.com\",\r\n  \"password\": \"Mechanic123@\",\r\n  \"deviceId\": \"95464565797686\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/sign-in",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign-in seller",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"pm.environment.set(\"userId\", res.user.id);\r",
+									"pm.environment.set(\"accessToken\", res.tokens.accessToken);\r",
+									"pm.environment.set(\"refreshToken\", res.tokens.refreshToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"seller@gmail.com\",\r\n  \"password\": \"Seller123@\",\r\n  \"deviceId\": \"982345534535797686\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/sign-in",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"v637904@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/forgot-password",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-password-set",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlZmNjNDU3ZS04ZTdjLTQzNjEtOWYwOS0yMjRmOTUzMjAxMTMiLCJkZXZpY2VJZCI6Ijk4MjMyMzIzNzk3Njg2IiwiaWF0IjoxNzMwMDQ0OTI3LCJleHAiOjE3MzAwODA5Mjd9.VK6YOzQGv48gdHE9-BGGc8L_bkSlePS90z6TUksgmiE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"Manager1234@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baceURL}}/auth/forgot-password",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"Manager123@\",\r\n  \"oldPassword\": \"Manager12345@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baceURL}}/auth/change-password",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign-in buyer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"pm.environment.set(\"userId\", res.user.id);\r",
+									"pm.environment.set(\"accessToken\", res.tokens.accessToken);\r",
+									"pm.environment.set(\"refreshToken\", res.tokens.refreshToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"buyer@gmail.com\",\r\n  \"password\": \"Buyer123@\",\r\n  \"deviceId\": \"9456456457686\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baceURL}}/auth/sign-in",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"pm.environment.set(\"accessToken\", res.accessToken);\r",
+									"pm.environment.set(\"refreshToken\", res.refreshToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{refreshToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/refresh",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "currency",
+			"item": [
+				{
+					"name": "get currencies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/currency",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"currency"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get currency by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/currency/USD",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"currency",
+								"USD"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "advertisement",
+			"item": [
+				{
+					"name": "create advertisement by car id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"pm.environment.set(\"advId\", res.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"2023 Toyota Camry for Sale\",\r\n  \"description\": \"This 2021 Toyota Camry is in excellent condition, with only 5,000 miles on it. It has a backup camera, lane departure warning, and other advanced features. Contact me for more details!\",\r\n  \"price\": 25000.0,\r\n  \"currency\":\"UAH\",\r\n  \"carId\":\"1386791d-abe9-45ea-a822-b27ec945ba52\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/advertisements/by_car_id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"advertisements",
+								"by_car_id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create advertisement with car",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"pm.environment.set(\"advId\", res.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"2018 Toyota Corolla for Sale\",\r\n  \"description\": \"This 2021 Toyota Corolla is in excellent condition, with only 5,000 miles on it. It has a backup camera, lane departure warning, and other advanced features. Contact me for more details!\",\r\n  \"price\": 2500.0,\r\n  \"currency\":\"USD\",\r\n   \"car\": {\r\n        \"producer\": \"Toyota\",\r\n        \"model\": \"Corolla\",\r\n        \"power\": 1320,\r\n        \"year\": 2018,\r\n        \"mileage\": 50000,\r\n        \"numberDoors\": 4,\r\n        \"numberSeats\": 5,\r\n        \"color\": \"Red\"\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/advertisements/with_car",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"advertisements",
+								"with_car"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit advertisement by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"2021 Toyota Camry for Sale\",\r\n  \"description\": \"This 2021 Toyota Camry is in excellent condition, with only 5,000 miles on it. It has a backup camera, lane departure warning, and other advanced features. Contact me for more details bad!\",\r\n  \"price\": 25000.0,\r\n  \"currency\":\"UAH\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/advertisements/bb884473-98a0-4a7c-989b-6f8b05789529",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"advertisements",
+								"bb884473-98a0-4a7c-989b-6f8b05789529"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get advertisemets all by params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/advertisements",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"advertisements"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "2022 Toyota Camry for Sale",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Toyota",
+									"disabled": true
+								},
+								{
+									"key": "region",
+									"value": "Vinnytsia Region",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "25000",
+									"disabled": true
+								},
+								{
+									"key": "currency",
+									"value": "UAH",
+									"disabled": true
+								},
+								{
+									"key": "producer",
+									"value": "Audi",
+									"disabled": true
+								},
+								{
+									"key": "model",
+									"value": "A6",
+									"disabled": true
+								},
+								{
+									"key": "power",
+									"value": "1100",
+									"disabled": true
+								},
+								{
+									"key": "year",
+									"value": "2006",
+									"disabled": true
+								},
+								{
+									"key": "numberDoors",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "numberSeats",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "mileage",
+									"value": "100000",
+									"disabled": true
+								},
+								{
+									"key": "color",
+									"value": "red",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get advertisemets all admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/advertisements/admin",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"advertisements",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get advertisemet by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/advertisements/c72f6db5-ed03-4fbe-83b7-c744c9aba691",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"advertisements",
+								"c72f6db5-ed03-4fbe-83b7-c744c9aba691"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get advertisemet by id admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/advertisements/admin/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"advertisements",
+								"admin",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "74163e82-61ba-4594-af31-8ef8bab233a7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete advertisement by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/advertisements/c72f6db5-ed03-4fbe-83b7-c744c9aba691",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"advertisements",
+								"c72f6db5-ed03-4fbe-83b7-c744c9aba691"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create advertisement with car with photo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "car[model]",
+									"value": "A6",
+									"type": "text"
+								},
+								{
+									"key": "car[producer]",
+									"value": "Audi",
+									"type": "default"
+								},
+								{
+									"key": "car[power]",
+									"value": "1100",
+									"type": "default"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/Volodymyr/Downloads/volkswagen-5.jpg"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/Volodymyr/Downloads/volkswagen-golf-4.jpg"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/Volodymyr/Downloads/3.jpg"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "car[year]",
+									"value": "2006",
+									"type": "default"
+								},
+								{
+									"key": "car[color]",
+									"value": "red",
+									"type": "default"
+								},
+								{
+									"key": "car[mileage]",
+									"value": "100000",
+									"type": "text"
+								},
+								{
+									"key": "car[numberDoors]",
+									"value": "5",
+									"type": "default"
+								},
+								{
+									"key": "car[numberSeats]",
+									"value": "5",
+									"type": "default"
+								},
+								{
+									"key": "title",
+									"value": "2023 Audi A6 for Sale",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This 2023 Audi A6 is in excellent condition, with only 5,000 miles on it. It has a backup camera, lane departure warning, and other advanced features. Contact me for more details!",
+									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "EUR",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "30000",
+									"type": "text"
+								},
+								{
+									"key": "region",
+									"value": "Lviv Region",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/advertisements/with_car_photos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"advertisements",
+								"with_car_photos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cars",
+			"item": [
+				{
+					"name": "get car by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cars/c14aec46-b356-4b0b-b340-eb2d020fef29",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								"c14aec46-b356-4b0b-b340-eb2d020fef29"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add photos to car by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/Volodymyr/Downloads/volkswagen-golf-1.jpg"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/Volodymyr/Downloads/volkswagen-golf-2.jpg"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/Volodymyr/Downloads/3.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/cars/photos/{{carId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								"photos",
+								"{{carId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create car",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"pm.environment.set(\"carId\", res.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"producer\":\"Audi\",\r\n    \"model\": \"A6\",\r\n    \"power\": 1000,\r\n    \"year\": 2005,\r\n    \"color\": \"blue\",\r\n    \"mileage\": 100000,\r\n    \"numberDoors\": 4,\r\n    \"numberSeats\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/cars",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save car with photos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "model",
+									"value": "A6",
+									"type": "text"
+								},
+								{
+									"key": "producer",
+									"value": "Audi",
+									"type": "default"
+								},
+								{
+									"key": "power",
+									"value": "1100",
+									"type": "default"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/Volodymyr/Downloads/volkswagen-golf-4.jpg"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/Volodymyr/Downloads/volkswagen-5.jpg"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/Volodymyr/Downloads/volkswagen-golf-1.jpg"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/Volodymyr/images/Audi-A8.jpg",
+									"disabled": true
+								},
+								{
+									"key": "year",
+									"value": "2006",
+									"type": "default"
+								},
+								{
+									"key": "color",
+									"value": "red",
+									"type": "default"
+								},
+								{
+									"key": "mileage",
+									"value": "100000",
+									"type": "text"
+								},
+								{
+									"key": "numberDoors",
+									"value": "5",
+									"type": "default"
+								},
+								{
+									"key": "numberSeats",
+									"value": "5",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/cars/with_photos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								"with_photos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete car by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cars/f66140a0-8007-4858-a399-036f9bf2eec2",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								"f66140a0-8007-4858-a399-036f9bf2eec2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete photo by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cars/da2f46d3-5da3-41c1-ac1f-cba95e2db419/photo?fullUrl=\"http://localhost:8000/auto-ria-clone-2024/photos/da2f46d3-5da3-41c1-ac1f-cba95e2db419/56eb4e79-72f5-452f-863e-5970fe1a117d.jpg\"",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								"da2f46d3-5da3-41c1-ac1f-cba95e2db419",
+								"photo"
+							],
+							"query": [
+								{
+									"key": "fullUrl",
+									"value": "\"http://localhost:8000/auto-ria-clone-2024/photos/da2f46d3-5da3-41c1-ac1f-cba95e2db419/56eb4e79-72f5-452f-863e-5970fe1a117d.jpg\""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all cars by params",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cars",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars"
+							],
+							"query": [
+								{
+									"key": "producer",
+									"value": "Audi",
+									"disabled": true
+								},
+								{
+									"key": "model",
+									"value": "A6",
+									"disabled": true
+								},
+								{
+									"key": "color",
+									"value": "black",
+									"disabled": true
+								},
+								{
+									"key": "mileage",
+									"value": "100000",
+									"disabled": true
+								},
+								{
+									"key": "numberDoors",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "year",
+									"value": "2005",
+									"disabled": true
+								},
+								{
+									"key": "numberSeats",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update car by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"producer\":\"Audi\",\r\n    \"model\":\"A6\",\r\n    \"power\":900,\r\n    \"year\":2010,\r\n    \"color\":\"black\",\r\n    \"numberDoors\":3,\r\n    \"numberSeats\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/cars/f66140a0-8007-4858-a399-036f9bf2eec2",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								"f66140a0-8007-4858-a399-036f9bf2eec2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get producers all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cars/producers",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								"producers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get models all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cars/models",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								"models"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get model by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cars/models/9692e3f8-5c57-476d-8d80-056473d10507",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								"models",
+								"9692e3f8-5c57-476d-8d80-056473d10507"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all models by producer id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cars/models/producers/:producerId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								"models",
+								"producers",
+								":producerId"
+							],
+							"variable": [
+								{
+									"key": "producerId",
+									"value": "739b609b-91e5-4697-ab7b-ec149a21f39a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get producer by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cars/producers/f67e588e-7bac-41cf-94dc-0c7c6888bbb6",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								"producers",
+								"f67e588e-7bac-41cf-94dc-0c7c6888bbb6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get regions all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cars/regions",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								"regions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get region by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cars/regions/e4310b0f-8105-4c7c-89d2-c9bb77b324a7",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								"regions",
+								"e4310b0f-8105-4c7c-89d2-c9bb77b324a7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "autodealer",
+			"item": [
+				{
+					"name": "save dealler",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"volodymyr@gmail.com\",\r\n    \"password\": \"volodymyr1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save admins by dealer id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb2x5YUBnbWFpbC5jb20ifQ.6xn_6fF4NeKloKWP-fb5PJMli36ipAd9ZhZZC09n340",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"username\": \"admin@example.com\",\r\n        \"password\": \"admin123\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autodealers/admins/1/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autodealers",
+								"admins",
+								"1",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save mechanics by dealer id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb2x5YUBnbWFpbC5jb20ifQ.6xn_6fF4NeKloKWP-fb5PJMli36ipAd9ZhZZC09n340",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"username\": \"admin@example.com\",\r\n        \"password\": \"admin123\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autodealers/admins/1/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autodealers",
+								"admins",
+								"1",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save buyers by dealer id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb2x5YUBnbWFpbC5jb20ifQ.6xn_6fF4NeKloKWP-fb5PJMli36ipAd9ZhZZC09n340",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"username\": \"admin@example.com\",\r\n        \"password\": \"admin123\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autodealers/admins/1/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autodealers",
+								"admins",
+								"1",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save mechanic by dealer id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb2x5YUBnbWFpbC5jb20ifQ.6xn_6fF4NeKloKWP-fb5PJMli36ipAd9ZhZZC09n340",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"username\": \"admin@example.com\",\r\n        \"password\": \"admin123\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autodealers/admins/1/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autodealers",
+								"admins",
+								"1",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save buyer by dealer id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb2x5YUBnbWFpbC5jb20ifQ.6xn_6fF4NeKloKWP-fb5PJMli36ipAd9ZhZZC09n340",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {\r\n        \"username\": \"buyern@example.com\",\r\n        \"password\": \"buyer123\"\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autodealers/buyer/1/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autodealers",
+								"buyer",
+								"1",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save managers by dealer id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb2x5YUBnbWFpbC5jb20ifQ.6xn_6fF4NeKloKWP-fb5PJMli36ipAd9ZhZZC09n340",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"username\": \"admin@example.com\",\r\n        \"password\": \"admin123\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autodealers/admins/1/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autodealers",
+								"admins",
+								"1",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save sales by dealer id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb2x5YUBnbWFpbC5jb20ifQ.6xn_6fF4NeKloKWP-fb5PJMli36ipAd9ZhZZC09n340",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n           \"userFirstname\": \"Emily1\",\r\n      \"userLastname\": \"Brown1\",\r\n      \"phoneNumber\": \"+1166224455\",\r\n      \"username\": \"emily_seller1\",\r\n      \"password\": \"emily1\"\r\n     \r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autodealers/sales/1/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autodealers",
+								"sales",
+								"1",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save seller by dealer id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb2x5YUBnbWFpbC5jb20ifQ.6xn_6fF4NeKloKWP-fb5PJMli36ipAd9ZhZZC09n340",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n           \"userFirstname\": \"Emily1\",\r\n      \"userLastname\": \"Brown1\",\r\n      \"phoneNumber\": \"+1166224455\",\r\n      \"username\": \"emily_seller1\",\r\n      \"password\": \"emily1\"\r\n     \r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autodealers/sales/1/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autodealers",
+								"sales",
+								"1",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save manager by dealer id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb2x5YUBnbWFpbC5jb20ifQ.6xn_6fF4NeKloKWP-fb5PJMli36ipAd9ZhZZC09n340",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"username\": \"admin@example.com\",\r\n        \"password\": \"admin123\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autodealers/admins/1/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autodealers",
+								"admins",
+								"1",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save admin by dealer id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb2x5YUBnbWFpbC5jb20ifQ.6xn_6fF4NeKloKWP-fb5PJMli36ipAd9ZhZZC09n340",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"username\": \"admin@example.com\",\r\n        \"password\": \"admin123\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autodealers/admins/1/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autodealers",
+								"admins",
+								"1",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get admins by dealer id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb2x5YUBnbWFpbC5jb20ifQ.6xn_6fF4NeKloKWP-fb5PJMli36ipAd9ZhZZC09n340",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autodealers/admins/1/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autodealers",
+								"admins",
+								"1",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get managers by dealer id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb2x5YUBnbWFpbC5jb20ifQ.6xn_6fF4NeKloKWP-fb5PJMli36ipAd9ZhZZC09n340",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autodealers/managers/1/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autodealers",
+								"managers",
+								"1",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get sales by dealer id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb2x5YUBnbWFpbC5jb20ifQ.6xn_6fF4NeKloKWP-fb5PJMli36ipAd9ZhZZC09n340",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autodealers/managers/1/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autodealers",
+								"managers",
+								"1",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get mechanics by dealer id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb2x5YUBnbWFpbC5jb20ifQ.6xn_6fF4NeKloKWP-fb5PJMli36ipAd9ZhZZC09n340",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autodealers/managers/1/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autodealers",
+								"managers",
+								"1",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get buyers by dealer id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb2x5YUBnbWFpbC5jb20ifQ.6xn_6fF4NeKloKWP-fb5PJMli36ipAd9ZhZZC09n340",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autodealers/managers/1/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autodealers",
+								"managers",
+								"1",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get  dealers all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb2x5YUBnbWFpbC5jb20ifQ.6xn_6fF4NeKloKWP-fb5PJMli36ipAd9ZhZZC09n340",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autodealers/managers/1/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autodealers",
+								"managers",
+								"1",
+								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "get all users by params",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baceUrlNode}}/users?role=admin",
+							"host": [
+								"{{baceUrlNode}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "role",
+									"value": "admin"
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "me avatar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Volodymyr/Downloads/avatar_4.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/me/avatar",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"me",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete avatar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Volodymyr/Downloads/avatar_2.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baceURL}}/users/me/avatar",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"users",
+								"me",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find me",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"pm.environment.set(\"userId\", res.user.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/users/me",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update me",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"phone\": \"323233421323\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baceUrlNode}}/users/me",
+							"host": [
+								"{{baceUrlNode}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baceURL}}}/users/1be1f82c-337c-4f1a-b79d-63095ba3dbea",
+							"host": [
+								"{{baceURL}}}"
+							],
+							"path": [
+								"users",
+								"1be1f82c-337c-4f1a-b79d-63095ba3dbea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}}/users/{{userId}}",
+							"host": [
+								"{{baseURL}}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "manager",
+			"item": [
+				{
+					"name": "ban user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{baceURL}}/manager/ban/92cfc05a-fa0d-4acc-87fa-58bb3d5cfbff",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"manager",
+								"ban",
+								"92cfc05a-fa0d-4acc-87fa-58bb3d5cfbff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unban user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{baceURL}}/manager/unban/92cfc05a-fa0d-4acc-87fa-58bb3d5cfbff",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"manager",
+								"unban",
+								"92cfc05a-fa0d-4acc-87fa-58bb3d5cfbff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "notify missing producer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baceURL}}/manager/notify/producer/audi",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"manager",
+								"notify",
+								"producer",
+								"audi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create producers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"producers\":[\"audi\", \"citroen\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baceURL}}/manager/producers",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"manager",
+								"producers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove producer by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baceURL}}/manager/producers/d93c835b-5a3c-4d7b-8a16-ea181312ce30",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"manager",
+								"producers",
+								"d93c835b-5a3c-4d7b-8a16-ea181312ce30"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove model by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baceURL}}/manager/models/fd51a5b9-181c-403c-ab79-278592c910a4",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"manager",
+								"models",
+								"fd51a5b9-181c-403c-ab79-278592c910a4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove region by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baceURL}}/manager/regions/eabb5633-8e8a-489a-b2d9-deb0818684d3",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"manager",
+								"regions",
+								"eabb5633-8e8a-489a-b2d9-deb0818684d3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create models",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"producer\":\"audi\",\r\n    \"models\":[\"q8\", 80]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baceURL}}/manager/models",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"manager",
+								"models"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create regions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"regions\": [\"region1\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baceURL}}/manager/regions",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"manager",
+								"regions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "notify missing model",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baceURL}}/manager/notify/producer/audi/model/G7",
+							"host": [
+								"{{baceURL}}"
+							],
+							"path": [
+								"manager",
+								"notify",
+								"producer",
+								"audi",
+								"model",
+								"G7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "premium",
+			"item": [
+				{
+					"name": "buy-premium account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/premium/buy-premium",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"premium",
+								"buy-premium"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get order id by user id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/premium/e77c1974-a482-44ae-b3d4-ee0d4b9831b0",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"premium",
+								"e77c1974-a482-44ae-b3d4-ee0d4b9831b0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "confirmation-of-payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/premium/confirmation-of-payment/11ff80267f9dfcf79c28c8e56f1b4cc5",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"premium",
+								"confirmation-of-payment",
+								"11ff80267f9dfcf79c28c8e56f1b4cc5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Info",
+			"item": [
+				{
+					"name": "get weekly view count for advertisement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/info/advertisement/:id/weekly_views",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"info",
+								"advertisement",
+								":id",
+								"weekly_views"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get monthly view count for advertisement",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/info/advertisement/:id/monthly_views",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"info",
+								"advertisement",
+								":id",
+								"monthly_views"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all view count for advertisement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/info/advertisement/:id/all_views",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"info",
+								"advertisement",
+								":id",
+								"all_views"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "74163e82-61ba-4594-af31-8ef8bab233a7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get average price by region",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/info/average-price/region?producerId=739b609b-91e5-4697-ab7b-ec149a21f39a&regionId=e4310b0f-8105-4c7c-89d2-c9bb77b324a7&modelId=c68f0c56-72ca-43aa-81b0-c899d7ff4416&currency=UAH",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"info",
+								"average-price",
+								"region"
+							],
+							"query": [
+								{
+									"key": "producerId",
+									"value": "739b609b-91e5-4697-ab7b-ec149a21f39a"
+								},
+								{
+									"key": "regionId",
+									"value": "e4310b0f-8105-4c7c-89d2-c9bb77b324a7"
+								},
+								{
+									"key": "modelId",
+									"value": "c68f0c56-72ca-43aa-81b0-c899d7ff4416"
+								},
+								{
+									"key": "currency",
+									"value": "UAH"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get average price for ukraine",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/info/average-price/ukraine?producerId&modelId&currency",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"info",
+								"average-price",
+								"ukraine"
+							],
+							"query": [
+								{
+									"key": "producerId",
+									"value": null
+								},
+								{
+									"key": "modelId",
+									"value": null
+								},
+								{
+									"key": "currency",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "cars",
+			"value": "http://localhost:8080/cars",
+			"type": "string"
+		},
+		{
+			"key": "advertisements",
+			"value": "http://localhost:8080/advertisements",
+			"type": "string"
+		},
+		{
+			"key": "users",
+			"value": "http://localhost:8080/users",
+			"type": "string"
+		},
+		{
+			"key": "producers",
+			"value": "http://localhost:8080/producers",
+			"type": "string"
+		},
+		{
+			"key": "host",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "managers",
+			"value": "http://localhost:8080/managers",
+			"type": "string"
+		},
+		{
+			"key": "buyers",
+			"value": "http://localhost:8080/buyers",
+			"type": "string"
+		},
+		{
+			"key": "admin",
+			"value": "http://localhost:8080/admin",
+			"type": "string"
+		},
+		{
+			"key": "owner",
+			"value": "http://localhost:8080/owner",
+			"type": "string"
+		},
+		{
+			"key": "sellers",
+			"value": "http://localhost:8080/sellers",
+			"type": "string"
+		},
+		{
+			"key": "currency",
+			"value": "http://localhost:8080/currency",
+			"type": "string"
+		},
+		{
+			"key": "manager",
+			"value": "http://localhost:8080/manager",
+			"type": "string"
+		},
+		{
+			"key": "views",
+			"value": "http://localhost:8080/views/advertisement",
+			"type": "string"
+		}
+	]
+}

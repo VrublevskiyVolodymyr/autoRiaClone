@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  auto-ria-clone-2024-postgres:
+    image: postgres:16.1
+    ports:
+      - '${POSTGRES_PORT:-5432}:5432'
+    environment:
+      POSTGRES_USER: '${POSTGRES_USER:-user}'
+      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-password}'
+      POSTGRES_DB: '${POSTGRES_DB:-auto-ria-clone-2024}'
+    volumes:
+      - ./auto-ria-clone-2024-api-db:/var/lib/postgresql/auto-ria-clone-2024
+    env_file:
+      - ./environments/local.env
+
+  auto-ria-clone-2024-redis:
+    image: redis:7.2.3
+    ports:
+      - '${REDIS_PORT:-6379}:6379'
+    command: >
+      --requirepass '${REDIS_PASSWORD:-redispass}'
+    restart: unless-stopped
+    env_file:
+      - ./environments/local.env
+
+  auto-ria-clone-2024-s3:
+    image: quay.io/minio/minio:latest
+    command: server /data --console-address ":9001"
+    restart: unless-stopped
+    ports:
+      - "8000:9000"
+      - "8001:9001"
+    volumes:
+      - ./auto-ria-clone-2024-api-s3-data:/usr/src/app/s3
+    environment:
+      - MINIO_ROOT_USER=user            # AWS_S3_ACCESS_KEY
+      - MINIO_ROOT_PASSWORD=password    # AWS_S3_SECRET_KEY
+    env_file:
+      - ./environments/local.env
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - auto-ria-clone-2024-postgres
+      - auto-ria-clone-2024-redis
+      - auto-ria-clone-2024-s3
+    restart: unless-stopped
+    env_file:
+      - ./environments/local.env
+
+volumes:
+  auto-ria-clone-2024-api-db:
+  auto-ria-clone-2024-api-s3:
