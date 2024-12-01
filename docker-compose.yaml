@@ -29,25 +29,25 @@ services:
     command: server /data --console-address ":9001"
     restart: unless-stopped
     ports:
-      - "8000:9000"
-      - "8001:9001"
+      - "9000:9000"
+      - "9001:9001"
     volumes:
       - ./auto-ria-clone-2024-api-s3-data:/usr/src/app/s3
     environment:
       - MINIO_ROOT_USER=user            # AWS_S3_ACCESS_KEY
       - MINIO_ROOT_PASSWORD=password    # AWS_S3_SECRET_KEY
-    env_file:
-      - ./environments/local.env
 
   app:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "3001:3001"
     volumes:
       - .:/app
       - /app/node_modules
+    command: >
+      sh -c "npm run start:local"
     environment:
       - NODE_ENV=development
     depends_on:

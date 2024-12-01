@@ -94,10 +94,13 @@ To run the project, you need to install the following tools on your computer:
 4. Set up your environment variables:
    Rename .env.example to ./environments/local.env
    Configure the necessary environment variables (AWS keys, database credentials, etc.)
+   Replace the following values in the ./environments/local.env file with valid ones:
+   SMTP_EMAIL="manager@gmail.com"
+   MANAGER_EMAIL="manager@gmail.com"
+   SMTP_PASSWORD="manager_smtp_password""
 5. Start the Docker container with the environment settings:
     ```bash
    docker compose up --build
-
 6. Navigate to the MinIO console at http://localhost:8001/login.
 Log in using the credentials specified in your .env file (MINIO_ROOT_USER and MINIO_ROOT_PASSWORD).
 Create a bucket with the name specified in your .env file for AWS_S3_BUCKET_NAME (e.g., auto-ria-clone-2024).
