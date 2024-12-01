@@ -88,28 +88,22 @@ To run the project, you need to install the following tools on your computer:
 2. Navigate to the project directory:
    ```bash
    cd autoRiaClone
-3. Install dependencies:
-   ```bash
-    npm install
-4. Set up your environment variables:
+3. Set up your environment variables:
    Rename .env.example to ./environments/local.env
    Configure the necessary environment variables (AWS keys, database credentials, etc.)
    Replace the following values in the ./environments/local.env file with valid ones:
    SMTP_EMAIL="manager@gmail.com"
    MANAGER_EMAIL="manager@gmail.com"
    SMTP_PASSWORD="manager_smtp_password""
-5. Start the Docker container with the environment settings:
+4. Start the Docker container with the environment settings and the application:
     ```bash
-   docker compose up --build
-6. Navigate to the MinIO console at http://localhost:8001/login.
+   docker compose up
+5. Navigate to the MinIO console at http://localhost:9001/login.
 Log in using the credentials specified in your .env file (MINIO_ROOT_USER and MINIO_ROOT_PASSWORD).
 Create a bucket with the name specified in your .env file for AWS_S3_BUCKET_NAME (e.g., auto-ria-clone-2024).
-7. Start the application:
-   ```bash
-   npm run start:local
-8. Access the application:
+6. Access the application:
    The application should now be running at http://localhost:3001.
-9. Documentation is available at [http://localhost:3001/docs](http://localhost:3001/docs).
+7. Documentation is available at [http://localhost:3001/docs](http://localhost:3001/docs).
 
 ### Future Plans
 Support for car dealerships with internal teams (managers, administrators, mechanics, sales personnel)
